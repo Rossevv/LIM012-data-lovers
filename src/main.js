@@ -35,14 +35,14 @@ buttonWelcome.addEventListener('click', () => {
 });
 
 popularHability.style.display = 'none';
-
+let img;
 const champions = (array, type) => {
   Object.values(array).forEach((champion) => {
     const div = document.createElement('div');
-    const img = document.createElement('img');
     const p = document.createElement('p');
     const p2 = document.createElement('p');
     let p3 = document.createElement('p');
+    img = document.createElement('img');
     p.className = 'nameOfChampion';
     img.className = 'imageOfChampion';
     p2.className = 'tagsOfChampion';
@@ -62,89 +62,6 @@ const champions = (array, type) => {
     p3 = type ? p.style.marginBottom = '3px' : p.style.marginBottom = '3px';
     divContador.style.backgroundColor = '#316a99';
     divContador.style.boxShadow = '0 0 10px #b3b4ab, 0 0 40px #b3b4ab, 0 0 80px #b3b4ab';
-
-    img.addEventListener('click', () => {
-      graphicChart.style.display = 'block';
-      externalLinks.style.display = 'none';
-      gifChampion.style.display = 'none';
-      allButtons.innerHTML = '';
-      buttonAllChampions.style.display = 'block';
-      list.innerHTML = '';
-      canvasCalculationGraph.style.display = 'block';
-      const divForInfoChampion = document.createElement('div');
-      const infoChampion = document.createElement('p');
-      const imageChampion = document.createElement('img');
-      // const chartArea = document.createElement('canvas');
-      infoChampion.className = 'infoChampion';
-      imageChampion.className = 'imageChampion';
-      infoChampion.innerHTML = `${champion.blurb}`;
-      imageChampion.src = `${champion.splash}`;
-      divForInfoChampion.appendChild(infoChampion);
-      divForInfoChampion.appendChild(imageChampion);
-      list.appendChild(divForInfoChampion);
-      // in this section the constants store numerical data to be used in the statistical graph
-      const utilityArea = utility(champion);
-      console.log(`${champion.stats.attackdamage}`);
-
-      // const utilidad = (parseFloat(`${champion.stats.armor}`) + parseFloat(`${champion.stats.armorperlevel}`)
-      // + parseFloat(`${champion.stats.attackdamage}`) + parseFloat(`${champion.stats.attackdamageperlevel}`)
-      // + parseFloat(`${champion.stats.attackrange}`)) / 5;
-      // const daño = (parseFloat(`${champion.stats.crit}`) + parseFloat(`${champion.stats.critperlevel}`)) / 2;
-      // const dureza = (parseFloat(`${champion.stats.hp}`) + parseFloat(`${champion.stats.hpperlevel}`)
-      // + parseFloat(`${champion.stats.hpregen}`) + parseFloat(`${champion.stats.hpregenperlevel}`)) / 4;
-      // const movilidad = (parseFloat(`${champion.stats.movespeed}`) + parseFloat(`${champion.stats.attackspeedoffset}`)
-      // + parseFloat(`${champion.stats.attackspeedperlevel}`)) / 3;
-      // const controlDeMasas = (parseFloat(`${champion.stats.mp}`) + parseFloat(`${champion.stats.mpperlevel}`)
-      // + parseFloat(`${champion.stats.mpregen}`) + parseFloat(`${champion.stats.mpregenperlevel}`)
-      // + parseFloat(`${champion.stats.spellblock}`) + parseFloat(`${champion.stats.spellblockperlevel}`)) / 6;
-
-
-      const calculationGraph = new Chart(ctx, {
-        type: 'polarArea',
-        data: {
-          datasets: [{
-
-            data: [
-              `${utilityArea}`,
-              `${daño}`,
-              `${dureza}`,
-              `${movilidad}`,
-              `${controlDeMasas}`,
-            ],
-            backgroundColor: [
-              '#f1c40f',
-              '#e67e22',
-              '#16a085',
-              '#2980b9',
-              '#a6d4f2',
-            ],
-            label: 'DataOfChampions', // for legend
-          }],
-          labels: [
-            'utilidad',
-            'daño',
-            'dureza',
-            'movilidad',
-            'control de masas',
-          ],
-        },
-        options: {
-          responsive: true,
-          maintainAspectRatio: true,
-          legend: {
-            position: 'right',
-          },
-          title: {
-            display: true,
-            text: 'DataOfChampions',
-          },
-          animation: {
-            animateRotate: true,
-            animateScale: true,
-          },
-        },
-      });
-    });
     divContador.style.backgroundColor = '#316a99';
     divContador.style.boxShadow = '0 0 10px #b3b4ab, 0 0 40px #b3b4ab, 0 0 80px #b3b4ab';
   });
@@ -228,3 +145,85 @@ butonOrder1.addEventListener('click', (event) => {
 //   }
 // })
 // });
+img.addEventListener('click', () => {
+  graphicChart.style.display = 'block';
+  externalLinks.style.display = 'none';
+  gifChampion.style.display = 'none';
+  allButtons.innerHTML = '';
+  buttonAllChampions.style.display = 'block';
+  list.innerHTML = '';
+  canvasCalculationGraph.style.display = 'block';
+  const divForInfoChampion = document.createElement('div');
+  const infoChampion = document.createElement('p');
+  const imageChampion = document.createElement('img');
+  // const chartArea = document.createElement('canvas');
+  infoChampion.className = 'infoChampion';
+  imageChampion.className = 'imageChampion';
+  infoChampion.innerHTML = `${champion.blurb}`;
+  imageChampion.src = `${champion.splash}`;
+  divForInfoChampion.appendChild(infoChampion);
+  divForInfoChampion.appendChild(imageChampion);
+  list.appendChild(divForInfoChampion);
+  // in this section the constants store numerical data to be used in the statistical graph
+  const utilityArea = utility(champions);
+  // console.log(`${champion.stats.attackdamage}`);
+
+  // const utilidad = (parseFloat(`${champion.stats.armor}`) + parseFloat(`${champion.stats.armorperlevel}`)
+  // + parseFloat(`${champion.stats.attackdamage}`) + parseFloat(`${champion.stats.attackdamageperlevel}`)
+  // + parseFloat(`${champion.stats.attackrange}`)) / 5;
+  // const daño = (parseFloat(`${champion.stats.crit}`) + parseFloat(`${champion.stats.critperlevel}`)) / 2;
+  // const dureza = (parseFloat(`${champion.stats.hp}`) + parseFloat(`${champion.stats.hpperlevel}`)
+  // + parseFloat(`${champion.stats.hpregen}`) + parseFloat(`${champion.stats.hpregenperlevel}`)) / 4;
+  // const movilidad = (parseFloat(`${champion.stats.movespeed}`) + parseFloat(`${champion.stats.attackspeedoffset}`)
+  // + parseFloat(`${champion.stats.attackspeedperlevel}`)) / 3;
+  // const controlDeMasas = (parseFloat(`${champion.stats.mp}`) + parseFloat(`${champion.stats.mpperlevel}`)
+  // + parseFloat(`${champion.stats.mpregen}`) + parseFloat(`${champion.stats.mpregenperlevel}`)
+  // + parseFloat(`${champion.stats.spellblock}`) + parseFloat(`${champion.stats.spellblockperlevel}`)) / 6;
+
+
+  const calculationGraph = new Chart(ctx, {
+    type: 'polarArea',
+    data: {
+      datasets: [{
+
+        data: [
+          `${utilityArea}`,
+          `${daño}`,
+          `${dureza}`,
+          `${movilidad}`,
+          `${controlDeMasas}`,
+        ],
+        backgroundColor: [
+          '#f1c40f',
+          '#e67e22',
+          '#16a085',
+          '#2980b9',
+          '#a6d4f2',
+        ],
+        label: 'DataOfChampions', // for legend
+      }],
+      labels: [
+        'utilidad',
+        'daño',
+        'dureza',
+        'movilidad',
+        'control de masas',
+      ],
+    },
+    options: {
+      responsive: true,
+      maintainAspectRatio: true,
+      legend: {
+        position: 'right',
+      },
+      title: {
+        display: true,
+        text: 'DataOfChampions',
+      },
+      animation: {
+        animateRotate: true,
+        animateScale: true,
+      },
+    },
+  });
+});

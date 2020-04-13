@@ -40,7 +40,7 @@
                 <div id="logo">
                     <img id="logo_Lol" src="assets/logo1.png" alt=""/>
                 </div>
-                <div id='content_buttons'>
+                <div id="content_buttons">
                     <div id="buttons_colection_champions">
                         <input id="button_colection" type="button" value="Collection"/>
                         <div id="contador">Champions</div>
@@ -55,7 +55,8 @@
                                     type="search"
                                     id="searchTexto"
                                     class="bar_menu_search"
-                                    placeholder="Search"/>
+                                    placeholder="Search"
+                                    spellcheck="false"/>
                             </div>
                             <li id="role">
                                 Role
@@ -90,12 +91,12 @@
                             <li id="order" name="order">
                                 Order by
                                 <ul id="alphabeticOrder">
-                                    <li class="ordering" value="a-z" id="AtoZ">
+                                    <li class="ordering" data-value="az" id="AtoZ">
                                         <a>
                                             A - Z
                                         </a>
                                     </li>
-                                    <li class="ordering" value="z-a" id="ZtoA">
+                                    <li class="ordering" data-value="za" id="ZtoA">
                                         <a>
                                             Z - A
                                         </a>
@@ -135,14 +136,12 @@
                         <img id="img-list" src="./assets/list.-champion.gif">
                     </div>
                     <div id="graphicChart">
-                        <!-- <button id="returnMain"> Return </button> -->
+                        <button id="returnMain"> Return </button>
                         <canvas
-                            id='calculationGraph'
+                            id="calculationGraph"
                             class="chartjs-render-monitor"
                             style="display: none"
-                            width="400" height="400"
-                            style = "background-color:red">
-                        </canvas>
+                            width="400" height="400"></canvas>
                     </div>
                 </section>
             </div>

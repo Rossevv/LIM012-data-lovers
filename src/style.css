@@ -2,66 +2,51 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  /*asegura que el relleno y el borde estén incluidos en el ancho y alto del total de la caja, así cuando se pone float ese borde es considerado para ser ubicado a la derecha*/
-}
- 
-html,
-body {
   font-family: 'Shadows Into Light', cursive;
 }
 
 #welcomeGift1 {
+  top: 50%;
+  left: 50%;
+  z-index: -1;
+  opacity: 85;
   position: fixed;
   min-width: 100%;
   min-height: 100%;
-  top : 50%;
-  left: 50%;
   transform: translateX(-50%) translateY(-50%);
-  z-index: -1;
-  opacity: 85;
 }
-
 /*Con min-width, móvil primero y con max-width, de escritorio primero.*/
 #words-Welcome {
-  font-size: 2vw;
   width: 30em;
-  margin-left: 2em;
-  padding-right: 5em;
-  text-align: center;
-}
-#words-Welcome{
-  text-shadow: 1px 10px 30px #fff017;
-  margin-bottom: 8%;
-  letter-spacing: 0.1em;
   color: wheat;
+  font-size: 2vw;
+  text-align: center;
+  margin: 0 0 8% 2em;
+  padding-right: 5em;
+  letter-spacing: 0.1em;
+  text-shadow: 0.0625rem 0.625rem 1.875rem #fff017;
 }
+
 #button-welcome {
-  position: relative;
-  display: 	inline-block;
-  padding: 15px 30px;
   color: #2196f3;
+  transition: 0.2s;
+  overflow: hidden;
+  font-size: 1.5rem;
+  margin-left: 17em;
+  position: relative;
   letter-spacing: 4px;
   text-decoration: none;
-  font-size: 24px;
-  transition: 0.2s;
-  margin-left: 17em;
-  overflow: hidden;
-  border: 2px solid black;
+  display: inline-block;
+  padding: 0.9375rem 1.875rem;
+  border: 0.125rem solid black;
 }
 
-/* #black > a:hover{
-  color: rgb(156, 97, 30);
-  background: seashell;
-  box-shadow: 0 0 0 10px seashell, 0 0 0 20px seashell, 0 0 0 30px seashell;
-  transition-delay: 0.2s;
-} */
-
-#button-welcome > span {
+#button-welcome>span {
   position: absolute;
   display: block;
 }
 
-#button-Welcome > span:nth-child(1){
+#button-Welcome>span:nth-child(1){
 top:0;
 left: -100%;
 width: 100%;
@@ -74,7 +59,7 @@ background: linear-gradient(90deg,transparent,#2196f3);
   transition: 1s;
 }
 
-#black > a > span:nth-child(3){
+#black>a>span:nth-child(3){
   bottom:0;
   right: -100%;
   width: 100%;
@@ -86,7 +71,7 @@ background: linear-gradient(90deg,transparent,#2196f3);
   transition: 1s;
   transition-delay: 0.5s;
 }
-#black > a > span:nth-child(2){
+#black>a>span:nth-child(2){
   top:-100%;
   right: 0;
   width: 2px;
@@ -98,7 +83,7 @@ background: linear-gradient(90deg,transparent,#2196f3);
   transition: 1s;
   transition-delay: 0.25s;
 }
-#black > a > span:nth-child(4){
+#black>a>span:nth-child(4){
   bottom:-100%;
   left: 0;
   width: 2px;
@@ -111,60 +96,44 @@ background: linear-gradient(90deg,transparent,#2196f3);
   transition-delay: 0.75s;
 
 }
-
-
 #img-lol {
-  margin-top: 2em;
+  margin: 2em 0 0 9em;
   width: 40%;
-  margin-left: 9em;
 }
-
 #img-list{
   width: 40em;
   height: auto;
-  margin-bottom: 40px;
+  margin: 0 auto 40px auto;
   display: block;
   position: cover;
-  margin-left: auto;
-  margin-right: auto;
 }
-
 #generalContainer {
-  background-image: url(assets/background1.jpg);
-  box-shadow: inset 0 0 0 1000px rgba(42, 42, 78, 0.671);
-  /* background-color: cornsilk; */
   background-size: cover;
   background-repeat: no-repeat;
   background-attachment: fixed;
-  /* background-size: cover; */
+  background-image: url(assets/background1.jpg);
+  box-shadow: inset 0 0 0 1000px rgba(42, 42, 78, 0.671);
   /*esto es para hacerlo responsive :) */
-  background-position: center;
-  height: 100%;
   width: 100%;
   margin: auto;
-  display: none;
+  height: 100%;
+  background-position: center;
   /*PROPIEDADES FLEX*/
   display: flex;
-  flex-direction: column;
-  flex-wrap: wrap;
   display: none;
-  z-index: -1;
+  flex-flow: column wrap;
 }
-
-
 header {
   height: 100%;
   width: 100%;
-  z-index: 3;
 }
-
 #logo_Lol {
   margin-top: 0;
   padding-top: 0;
   width: 20em;
   justify-content: center;
   height: auto;
-  z-index: 2;
+  z-index: 3;
 }
 
 #logo {
@@ -178,24 +147,22 @@ header {
   flex-wrap: wrap;
   justify-content: space-between;
   margin-bottom: 2rem;
-  margin-bottom: 19px;
 }
 
 #button_colection,
 #contador {
-  background-color: #b09d57;
-  font-family: 'Shadows Into Light', cursive;
-  outline: none;
   width: 15em;
   height: 2em;
-  border-radius: 2em;
+  outline: none;
   font-size: 1.5em;
   color: #e2eaf5;
+  margin: 0 6% 0 6%;
+  border-radius: 2em;
+  border-width: 0.5rem;
   border-style: double;
-  border-width: 8px;
   border-color: #282626;
-  margin-left: 6%;
-  margin-right: 6%;
+  background-color: #b09d57;
+  font-family: 'Shadows Into Light', cursive;
 }
 
 #contador {
@@ -211,19 +178,17 @@ header {
   height: auto;
   padding-right: 80px;
 }
-
 #detail_diamont_Riot2 {
   width: auto;
   height: 50%;
 }
 .buscadores {
-  margin-top: 1%;
-  margin-bottom: 4%;
+  top: 0;
+  padding: 0;
   width: 100%;
   height: 80%;
-  padding: 0;
   position: sticky;
-  top: 0;
+  margin: 1% 0 4% 0;
 }
 #menu{
   display: none;
@@ -241,74 +206,51 @@ li {
 }
 
 .filtros li a {
-  color: aliceblue;
-  background-color: #464242;
-  text-decoration: none;
   padding: 0.2em;
   display: block;
-  border-style: double;
-  border-width: 8px;
-  border-color: #b09d57;
-  font-size: 1rem;
   width: 17.1rem;
   margin-top: 4%;
+  font-size: 1rem;
+  border-width: 8px;
+  color: aliceblue;
+  border-style: double;
+  text-decoration: none;
+  border-color: #b09d57;
+  background-color: #464242;
 }
 
 .filtros li a:hover {
-  background-color: gray;
   border-radius: 2em;
+  background: #316a99;
+  box-shadow: 0 0 10px #195d94, 0 0 40px #195d94, 0 0 80px #195d94;
 }
-.filtros li a:hover {
-background: #316a99;
-box-shadow: 0 0 10px #195d94, 0 0 40px #195d94, 0 0 80px #195d94; 
-}
-
 
 #habilidad_popular, #searchTexto, #button_colection,
 #contador {
+  padding: 4px 0;
+  text-transform: capitalize;
+  border-style: double;
+  transition: 0.5s ease-out;
   border-top: 4px solid transparent;
   border-bottom: 4px solid transparent;
-  border-style: double;
-  padding: 4px 0;
-  transition: 0.5s ease-out;
 } 
- #habilidad_popular:hover{
+ #habilidad_popular:hover, #searchTexto:hover, #button_colection:hover, .filtros > li:hover {
   border-bottom: 10px solid rgb(131, 135, 138);
   background: #316a99;
   box-shadow: 0 0 10px #195d94, 0 0 40px #195d94, 0 0 80px #195d94;
 }
-#searchTexto:hover{
-  border-bottom: 10px solid rgb(131, 135, 138);
-  background: #316a99;
-box-shadow: 0 0 10px #195d94, 0 0 40px #195d94, 0 0 80px #195d94; 
-}
-
-#button_colection:hover{
-  border-bottom: 10px solid rgb(131, 135, 138);
-  background: #316a99;
-box-shadow: 0 0 10px #195d94, 0 0 40px #195d94, 0 0 80px #195d94; 
-}
-
-.filtros > li:hover {
-  border-bottom: 10px solid rgb(131, 135, 138);
-  color: #255784;
-  background: #316a99;
-  box-shadow: 0 0 10px #195d94, 0 0 40px #195d94, 0 0 80px #195d94; 
-  
-}
 
 .filtros > li {
   float: left;
-  background-color: #b09d57;
   width: 20em;
-  /* padding-top: 0.5%; */
   height: 2.6em;
   font-size: 20px;
+  color: #e2eaf5;
+  border-width: 8px;
   text-align: center;
   border-style: double;
-  border-width: 8px;
   transition: 0.7s ease-out;
-  color: #e2eaf5;
+  background-color: #b09d57;
   border-right: 8px solid #b09d57;
   border-left: 8px solid #b09d57;
   border-top: 8px solid #464242;
@@ -316,51 +258,48 @@ box-shadow: 0 0 10px #195d94, 0 0 40px #195d94, 0 0 80px #195d94;
 }
 
 #searchTexto {
-  border-radius: 0;
-  margin-left: 7px;
   float: left;
-  background-color: #B09D57;
-  outline: none;
   width: 15em;
-  padding-top: 0.5%;
   height: 2.5em;
+  outline: none;
+  margin-left: 7px;
   font-size: 1.2em;
-  letter-spacing: 0.1em;
-  border-style: double;
+  color: #464242;
   border-width: 8px;
   text-align: center;
-  color: #464242;
+  border-style: double;
+  letter-spacing: 0.1em;
+  background-size: 35px;
+  padding: 0.5% 0 0 35px;
+  background-color: #B09D57;
+  background-repeat: no-repeat;
+  background-position: 38px 3px;
   border-right: 8px solid #b09d57;
   border-left: 8px solid #b09d57;
   border-top: 8px solid #464242;
   border-bottom: 8px solid #464242;
   background-image: url(./assets/iconfinder_Search.png);
-  background-size: 35px;
-  background-repeat: no-repeat;
-  background-position: 38px 3px;
-  padding-left: 35px;
 }
 
 #habilidad_popular {
   float: left;
-  background-color: #b09d57;
   width: 20em;
-  padding-top: 0.5%;
+  display: none;
   height: 2.6em;
   font-size: 20px;
+  color: #e2eaf5;
+  padding-top: 0.5%;
+  border-width: 8px;
   text-align: center;
   border-style: double;
-  border-width: 8px;
   transition: 0.7s ease-out;
-  color: #e2eaf5;
+  background-color: #b09d57;
+  animation: signal 1s infinite;
   border-right: 8px solid #b09d57;
   border-left: 8px solid #b09d57;
   border-top: 8px solid #464242;
   border-bottom: 8px solid #464242;
-  display: none;
-  animation: signal 1s infinite;
 }
-
 
 @keyframes signal {
   0% {
@@ -373,8 +312,6 @@ box-shadow: 0 0 10px #195d94, 0 0 40px #195d94, 0 0 80px #195d94;
 
 .filtros li ul {
   display: none;
-  position: absolute;
-  /*la lista desplegable es de la misma medida que el botón*/
 }
 
 .filtros li:hover > ul {
@@ -388,33 +325,28 @@ box-shadow: 0 0 10px #195d94, 0 0 40px #195d94, 0 0 80px #195d94;
 #root {
   color: #dfc981;
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 2fr));
-  padding-left: 6%;
-  padding-right: 5%;
+  grid-template-columns: repeat(auto-fill, minmax(338px, 2fr));
+  padding:0 5% 5% 6%;
 }
 #newSpace {
- border: 2px solid black;
- background-color: yellowgreen;
-
+border: 2px solid black;
+background-color: yellowgreen;
 }
 
 .nameOfChampion {
-  font-size: 20px;
-  padding-left: 0.8em;
-  background-color: #b09d57;  
-  color: white;
-  height: 1.5rem;
   width: 95%;
-  align-content: center;
-  margin-bottom: 60px;
-  padding-bottom: 36px;
+    height: 1.5rem;
+    color: white;
+    font-size: 20px;
+    align-content: center;
+    padding: 0 0 36px 0.8em;
+    background-color: #b09d57;
 }
 
 .imageOfChampion {
   width: 95%;
   height: 20em;
   border:2px #b09d57 solid;
-  z-index: -1;
 }
 
 #root:hover .imageOfChampion {
@@ -427,16 +359,15 @@ box-shadow: 0 0 10px #195d94, 0 0 40px #195d94, 0 0 80px #195d94;
 }
 
 .tagsOfChampion {
-  font-size: 20px;
-  text-align: center;
-  background-color: #c59a3e; 
-  height: 1.5rem;
   width: 95%;
-  align-content: center;
+  height: 1.5rem;
   color: white;
-  margin-bottom: 60px;
-  margin-top: -40px;
+  font-size: 20px;
   padding-left: 8em;
+  text-align: center;
+  align-content: center;
+  margin: -40px 0 20% 0;
+  background-color: #c59a3e;
 }
 .imageChampion{
   border-radius: 23px;
@@ -481,35 +412,31 @@ canvas{
 .chartjs-render-monitor{animation:chartjs-render-animation 1ms};
 
 .infoOfChampion{
-  font-size: 20px;
+  height: 3rem;
+  color: #ffbf00;
+  font-size: larger;
+  position: absolute;
   text-align: center;
-  margin-bottom: 10%;
-  background-color: #b09d57;  /* fallback for old browsers */
-  height: 1.5rem;
-  width: 95%;
-  align-content: center;
-  color: white;
-  padding-bottom: 1.4em;
-  padding-left: 4em;
+  margin: 25% 2% 0 0;
+  align-content: right;
+  overflow-wrap: normal;
+  font-family: 'Shadows Into Light', cursive;
 }
 
 footer {
   border: 2px solid black;
   background-color: rgb(11, 11, 3);
   font-family: "Righteous", cursive;
-  /* align-content: absolute; */
 }
 
 #play_links {
-  display: flex;
   width: auto;
   height: auto;
+  margin: auto;
+  display: flex;
   flex-direction: row;
   text-align-last: end;
-  margin: auto;
-  padding-top: 5%;
-  padding-left: 20%;
-  padding-right: 20%;
+  padding: 5% 20% 0 20%;
 }
 
 #img_Riot {
@@ -523,21 +450,21 @@ footer {
 }
 
 #final_information {
-  text-align: center;
-  font-family: "Righteous", cursive;
   font-size: 11px;
   color: #7e7e7e;
   line-height: 200%;
+  text-align: center;
+  font-family: "Righteous", cursive;
 }
 
 #gitHub {
-  align-items: center;
   width: auto;
   height: 50px;
+  align-items: center;
   background-color: #b09d57;
 }
 
-#gitHub > a > img {
+#gitHub>a>img {
   width: 50px;
   height: 50px;
   background-color: #b09d57;
@@ -552,64 +479,53 @@ footer {
   color: gold;
 }
 
-
 @media only  screen and (max-width: 375px) { 
   #graphicChart{
     display: none;
   }
   #button-welcome {
-    margin-left: 1em;
     width: 220px;
-    height: 31,2px;
-    margin-top: 2px;
+    height: 31, 2px;
     padding-top: 1px;
-    margin-bottom: 22px;
+    margin: 0.125rem 0 1.375rem 1em;
   }
   #welcomeGift1 {
+    top: 50%;
+    left: 50%;
+    z-index: -1;
+    opacity: 85;
     position: fixed;
     min-width: 100%;
     min-height: 100%;
-    top : 50%;
-    left: 50%;
     transform: translateX(-50%) translateY(-50%);
-    z-index: -1;
-    opacity: 85;
   }
   /*Con min-width, móvil primero y con max-width, de escritorio primero.*/
   #words-Welcome {
-    font-size: 20px;
     width: 300px;
-    margin-left: 0.5em;
-    margin-top: 90px;
+    font-size: 20px;
     padding-right: 0em;
     text-align: center;
+    margin: 90px 0 0 0.5em;
   }
   #img-lol {
-    margin-top: 0;
     width: 80%;
-    margin-left: 0.8em;
-    margin-bottom: 50px;
+    margin: 0 0 3.125rem 0.8em;
   }
   
   #img-list{
     width: 340px;
     height: auto;
-    margin-bottom: 60px;
-    padding-right: 30px;
-    margin-left: 0%;
-  margin-bottom: 20%;
-  margin-top: 15%;
+    padding-right: 1.875rem;
+    margin: 15% 0 3.75rem 0;
   }
  
   #logo_Lol {
-    margin-top: 1em;
-    margin-left: 40%;
-    margin-bottom: 5px;
     width: 7em;
-    justify-content: center;
-    padding-bottom: 2em;
     height: auto;
     position: fixed;
+    padding-bottom: 2em;
+    margin: 1em 0 0.3125rem 40%;
+    justify-content: center;
   }
 
 #root {
@@ -638,21 +554,19 @@ footer {
   border-left: transparent;
 }
 #buttons_colection_champions {
-  padding-top: 23%;
   height: 30%;
   width: 100%;
-  padding-left: 5% ;
-  padding-bottom: 20px;
-  justify-content: end;
-  font-size: 0.7em;
   position: fixed;
-  background: linear-gradient(#122230,#5a5f2f ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  font-size: 0.7em;
+  justify-content: end;
+  padding: 23% 0 1.25rem 5%;
+  background: linear-gradient(#122230, #5a5f2f);
 }
 .filtros {
-  flex-wrap: inherit;
-  justify-content: center;
   position: fixed;
   margin-top: 23%;
+  flex-wrap: inherit;
+  justify-content: center;
 }
 
 .filtros > li {
@@ -716,18 +630,14 @@ footer {
   border-right: transparent;
   padding-right: 8px;
   margin-right: 30px;
-  
-
   float: left;
   background: linear-gradient(#5a5f2f, #122230);
   height: 2.5em;
-
   text-align: center;
   width: 120px;
-    color: #e2eaf5;
-    margin-top: 50px;
+  color: #e2eaf5;
+  margin-top: 50px;
 }
-
 
 #gitHub {
   width: auto;
@@ -747,16 +657,15 @@ footer {
 .detail_diamont_Riot {
   width: 100%;
   height: 25px;
-padding-right: 30px;
+  padding-right: 30px;
 }
 #play_links {
-padding-top: 0;
-padding-left: 3%;
+  padding: 0 0 0 3%;
 }
 footer{
-  background: linear-gradient(#5a5f2f, #122230);
   border: 0;
   padding-top: 8px;
+  background: linear-gradient(#5a5f2f, #122230);
 }
 .filtros li a {
   font-size: 0.7rem;

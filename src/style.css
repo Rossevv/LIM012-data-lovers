@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Saira+Condensed:wght@700&display=swap');
 * {
   margin: 0;
   padding: 0;
@@ -17,103 +18,126 @@
 }
 /*Con min-width, móvil primero y con max-width, de escritorio primero.*/
 #words-Welcome {
-  width: 30em;
+  width: 25em;
   color: wheat;
   font-size: 2vw;
   text-align: center;
-  margin: 0 0 8% 2em;
-  padding-right: 5em;
+  padding: 0%;
+  margin: 1em 0em 3em 0em;
+  /* padding-right: 5em; */
   letter-spacing: 0.1em;
-  text-shadow: 0.0625rem 0.625rem 1.875rem #fff017;
+  text-shadow: 0.001rem 0.1rem 0.001rem #173aff;
 }
-
-#button-welcome {
-  color: #2196f3;
-  transition: 0.2s;
-  overflow: hidden;
-  font-size: 1.5rem;
-  margin-left: 17em;
-  position: relative;
-  letter-spacing: 4px;
-  text-decoration: none;
-  display: inline-block;
-  padding: 0.9375rem 1.875rem;
-  border: 0.125rem solid black;
-}
-
-#button-welcome>span {
-  position: absolute;
-  display: block;
-}
-
-#button-Welcome>span:nth-child(1){
-top:0;
-left: -100%;
-width: 100%;
-height: 2px;
-background: linear-gradient(90deg,transparent,#2196f3);
-}
-
-#black a:hover span:nth-child(1){
-  left: 100%;
-  transition: 1s;
-}
-
-#black>a>span:nth-child(3){
-  bottom:0;
-  right: -100%;
+.container{
   width: 100%;
-  height: 2px;
-  background: linear-gradient(270deg,transparent,#2196f3);
-  }
-#black a:hover span:nth-child(3){
-  left: 100%;
-  transition: 1s;
-  transition-delay: 0.5s;
+  height: 100vh;
+  display: flex;
+  /* es para que los tres elementos se vean en columna,
+  no está en el video */
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
-#black>a>span:nth-child(2){
-  top:-100%;
-  right: 0;
-  width: 2px;
+.button{
+  width: 150px;
   height: 100px;
-  background: linear-gradient(180 deg,transparent,#2196f3);
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
 }
-#black a:hover span:nth-child(2){
-  top: 100%;
-  transition: 1s;
-  transition-delay: 0.25s;
+.button:before{
+  content: '';
+  position: absolute;
+  width: 120px;
+  height: 120px;
+  border: 2px solid #ad8e32;
+  border-radius: 50px;
+  transform: scaleX(0);
+  transition: .1s;
+  transition-delay: .2s;
 }
-#black>a>span:nth-child(4){
-  bottom:-100%;
-  left: 0;
-  width: 2px;
-  height: 100px;
-  background: linear-gradient(360 deg,transparent,#2196f3);
-}
-#black a:hover span:nth-child(4){
-  bottom: 100%;
-  transition: 1s;
-  transition-delay: 0.75s;
+.button:hover:before{
+  transform: scaleX(1);
 
 }
+.button a {
+  font-family: 'Saira Condensed', sans-serif;
+  position: absolute;
+  width: 200px;
+  height: 100px;
+  text-align: center;
+  font-size: 1.5em;
+  font-weight: 700;
+  text-transform: uppercase;
+  line-height: 100px;
+  /* text-decoration: none; */
+  color: #122230;
+  transition: -5s;
+}
+.button a:hover {
+  font-size: 30px;
+}
+.button a:before{
+  content:'';
+  position: absolute;
+  width: 180px;
+  height: 180px;
+  background: #ad8e32;
+  border-radius: 50%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  transition: .5s;
+  z-index: -1;
+
+}
+
+.button a:hover:before{
+width: 100px;
+height: 100px;
+border: 1px solid #173aff;
+}
+
+.button a:after{
+  content: '';
+  position: absolute;
+  width: 0px;
+  height: 10px;
+  background: #ad8e32;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+  z-index: -1;
+  box-shadow: 200px 0px 0px #ad8e32;
+  transition: .5s;
+}
+
+.button a:hover:after{
+  width: 100px;
+  box-shadow: 100px 0px 0px #ad8e32;
+}
+
 #img-lol {
-  margin: 2em 0 0 9em;
+  margin: 2em 0 0 2em;
   width: 40%;
 }
-#img-list{
+
+/* #img-list{
   width: 40em;
   height: auto;
   margin: 0 auto 40px auto;
-  display: block;
+  display: none;
   position: cover;
-}
+} */
 #generalContainer {
   background-size: cover;
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-image: url(assets/background1.jpg);
   box-shadow: inset 0 0 0 1000px rgba(42, 42, 78, 0.671);
-  /*esto es para hacerlo responsive :) */
+  /*esto es para hacerlo responsive : */
   width: 100%;
   margin: auto;
   height: 100%;
@@ -483,12 +507,98 @@ footer {
   #graphicChart{
     display: none;
   }
-  #button-welcome {
-    width: 220px;
-    height: 31, 2px;
-    padding-top: 1px;
-    margin: 0.125rem 0 1.375rem 1em;
-  }
+
+  .container{
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  /* es para que los tres elementos se vean en columna,
+  no está en el video */
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.button{
+  width: 150px;
+  height: 100px;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+.button:before{
+  content: '';
+  position: absolute;
+  width: 120px;
+  height: 120px;
+  border: 2px solid #ad8e32;
+  border-radius: 50px;
+  transform: scaleX(0);
+  transition: .1s;
+  transition-delay: .2s;
+}
+.button:hover:before{
+  transform: scaleX(1);
+
+}
+.button a {
+  font-family: 'Saira Condensed', sans-serif;
+  position: absolute;
+  width: 200px;
+  height: 100px;
+  text-align: center;
+  font-size: 1.5em;
+  font-weight: 700;
+  text-transform: uppercase;
+  line-height: 100px;
+  /* text-decoration: none; */
+  color: #122230;
+  transition: -5s;
+}
+.button a:hover {
+  font-size: 30px;
+}
+.button a:before{
+  content:'';
+  position: absolute;
+  width: 180px;
+  height: 180px;
+  background: #ad8e32;
+  border-radius: 50%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  transition: .5s;
+  z-index: -1;
+
+}
+
+.button a:hover:before{
+width: 100px;
+height: 100px;
+border: 1px solid #173aff;
+}
+
+.button a:after{
+  content: '';
+  position: absolute;
+  width: 0px;
+  height: 10px;
+  background: #ad8e32;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+  z-index: -1;
+  box-shadow: 200px 0px 0px #ad8e32;
+  transition: .5s;
+}
+
+.button a:hover:after{
+  width: 100px;
+  box-shadow: 100px 0px 0px #ad8e32;
+}
+
   #welcomeGift1 {
     top: 50%;
     left: 50%;
@@ -503,21 +613,21 @@ footer {
   #words-Welcome {
     width: 300px;
     font-size: 20px;
-    padding-right: 0em;
     text-align: center;
-    margin: 90px 0 0 0.5em;
+    margin: 0 0 3em 0em;
   }
   #img-lol {
     width: 80%;
     margin: 0 0 3.125rem 0.8em;
   }
   
-  #img-list{
+  /* #img-list{
     width: 340px;
     height: auto;
     padding-right: 1.875rem;
     margin: 15% 0 3.75rem 0;
-  }
+    display: none;
+  } */
  
   #logo_Lol {
     width: 7em;
